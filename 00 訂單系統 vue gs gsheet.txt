@@ -1,49 +1,52 @@
-當你在 VS Code 修改完檔案後，要更新 GitHub Pages，以下是你每次更新的標準流程清單 ✅
+倉庫
+https://github.com/tainmail/vue_gs_gsheet
 
-✅ GitHub Pages 更新流程（在 VS Code）
-📁 1. 修改檔案
-編輯你的 cart.htm 或其他相關檔案
+網址
+https://tainmail.github.io/vue_gs_gsheet/cart.htm
 
-💾 2. 儲存檔案（Ctrl+S）
-🟢 3. 開啟 Git 面板（或用終端機）
-你有兩種方式：
 
-選項 A：使用 VS Code 左側 Git 圖示
-在 Message 輸入區填寫 commit 訊息（如 更新產品清單）
+==========================
+GitHub Pages 更新流程
+1. 修改檔案（如 cart.htm）
 
-點擊 ✅「✓ Commit」
+2. 儲存檔案（Ctrl + S）
 
-點擊 ⬆️「Push」
+3. 提交變更 Commit 再 Push
 
-選項 B：使用終端機輸入以下指令
-bash
-複製
-編輯
+VSCode 左側Git面板 → Commit → Push
+
+cmd 終端機輸入：
 git add .
-git commit -m "更新內容說明"
-git push
-🌐 4. 等待 GitHub Pages 自動部署（約 5~15 秒）
-🔄 5. 在瀏覽器上強制重整
-用快捷鍵：
-
-nginx
-複製
-編輯
-Ctrl + Shift + R（Windows）
-Cmd + Shift + R（Mac）
-這樣可以跳過快取、看到最新版本。
-
-✅ 整體流程總結清單
-修改檔案（cart.htm）
-
-儲存檔案
-
-git add .
-
-git commit -m "..."
-
+git commit -m "提交註解"
 git push
 
-等待 5~15 秒
 
-強制刷新網址
+4. 等待 GitHub Pages 自動部署（約 5～15 秒） 在瀏覽器中強制刷新頁面
+
+
+=================
+ GitHub Pages 部署流程
+1. 建立 GitHub 倉庫（https://github.com/new）
+
+2. 本機初始化 Git（若尚未）
+
+git init
+git add .
+git commit -m "initial commit"
+連接遠端倉庫並推送
+
+
+git remote add origin https://github.com/你的帳號/你的倉庫.git
+git branch -M main
+git push -u origin main
+進入 GitHub 倉庫 → Settings → Pages
+
+3. 設定 GitHub Pages
+
+Source 選擇 "Deploy from a branch"
+
+Branch 選 "main" → "資料夾選 / (root)"  → 點 Save
+
+完成部署，訪問網址為： https://你的帳號.github.io/你的倉庫名稱/你的檔案.html
+首次 60秒。之後 5秒內更新。
+
