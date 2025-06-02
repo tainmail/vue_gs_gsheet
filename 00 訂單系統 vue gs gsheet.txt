@@ -1,0 +1,49 @@
+當你在 VS Code 修改完檔案後，要更新 GitHub Pages，以下是你每次更新的標準流程清單 ✅
+
+✅ GitHub Pages 更新流程（在 VS Code）
+📁 1. 修改檔案
+編輯你的 cart.htm 或其他相關檔案
+
+💾 2. 儲存檔案（Ctrl+S）
+🟢 3. 開啟 Git 面板（或用終端機）
+你有兩種方式：
+
+選項 A：使用 VS Code 左側 Git 圖示
+在 Message 輸入區填寫 commit 訊息（如 更新產品清單）
+
+點擊 ✅「✓ Commit」
+
+點擊 ⬆️「Push」
+
+選項 B：使用終端機輸入以下指令
+bash
+複製
+編輯
+git add .
+git commit -m "更新內容說明"
+git push
+🌐 4. 等待 GitHub Pages 自動部署（約 5~15 秒）
+🔄 5. 在瀏覽器上強制重整
+用快捷鍵：
+
+nginx
+複製
+編輯
+Ctrl + Shift + R（Windows）
+Cmd + Shift + R（Mac）
+這樣可以跳過快取、看到最新版本。
+
+✅ 整體流程總結清單
+修改檔案（cart.htm）
+
+儲存檔案
+
+git add .
+
+git commit -m "..."
+
+git push
+
+等待 5~15 秒
+
+強制刷新網址
