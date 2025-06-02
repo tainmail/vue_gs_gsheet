@@ -35,8 +35,8 @@ git add .
 git commit -m "initial commit"
 連接遠端倉庫並推送
 
-
-git remote add origin https://github.com/你的帳號/你的倉庫.git
+會產生 git config
+git remote add origin https://github.com/你的帳號/你的倉庫.git 
 git branch -M main
 git push -u origin main
 進入 GitHub 倉庫 → Settings → Pages

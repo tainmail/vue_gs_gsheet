@@ -1,5 +1,8 @@
+//=============== gSheet 內嵌 gs =======================
+// gs 管理修改部署需要選"建立新版本",才會更新應用。
+
 const SPREADSHEET_ID = '1DZbJEi3lDsnOO2uA9dUDNYoyUYvGi8ULOJVGkfyzy88'; 
-const SHEET_NAME = 'Sheet1'; 
+const SHEET_NAME = '訂單表'; 
 
 
 // doPost =================
@@ -15,7 +18,7 @@ function doPost(e) {
     const sheet = SpreadsheetApp.openById(SPREADSHEET_ID).getSheetByName(SHEET_NAME);
   
     //debug 用
-    const sheetLog = SpreadsheetApp.openById(SPREADSHEET_ID).getSheetByName("log1");
+    const sheetLog = SpreadsheetApp.openById(SPREADSHEET_ID).getSheetByName("除錯表");
     sheetLog.getRange("A2").setValue("貓5");
     sheetLog.getRange("B2").setValue(requestData);
 
@@ -27,8 +30,8 @@ function doPost(e) {
       throw new Error("資料為空");
     }
 
-    // 取得表頭（第一列）
-    const rawHeaders = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+    // 取得表頭第 5 列
+    const rawHeaders = sheet.getRange(5, 1, 1, sheet.getLastColumn()).getValues()[0];
     const headers = rawHeaders.filter(h => h !== "");
 
     // 將每筆資料轉換為表頭順序的一維陣列
@@ -39,9 +42,9 @@ function doPost(e) {
     const numRows = rowsToInsert.length;
     const numCols = headers.length;
 
-    // 插入空列於第 2 列
-    sheet.insertRowsBefore(2, numRows);
-    sheet.getRange(2, 1, numRows, numCols).setValues(rowsToInsert);
+    // 插入空列於第 6 列
+    sheet.insertRowsBefore(6, numRows);
+    sheet.getRange(6, 1, numRows, numCols).setValues(rowsToInsert);
 
 
     // 返回成功響應給前端
