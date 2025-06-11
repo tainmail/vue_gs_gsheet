@@ -71,7 +71,7 @@
 
 
 		<!--產品列表搜尋 開始-->
-		<div class="border rounded px-2 py-3 mb-3">
+		<div class="border rounded px-2 py-3" style="margin-bottom:200px;">
 			<h4 class="bg-primary text-white fs-6 px-3 py-2 rounded-pill mb-3">Step 2：產品列表搜尋</h4>
 
 			<!--分類選單 1 開始-->
@@ -132,7 +132,7 @@
 						</td>
 						<td class="py-3 text-center">
 							<select v-model.number="tmpCartCount[item.ID]" class="form-select form-select-sm w-100 mb-1 border border-secondary">
-								<option v-for="n in 8" :key="n" :value="n">{{ n }}</option>
+								<option v-for="n in 10" :key="n" :value="n">{{ n }}</option>
 							</select>
 							<button class="btn btn-success btn-sm w-100" @click="fnCartAdd(item)">
 								<i class="bi bi-cart-plus me-1"></i>訂購
